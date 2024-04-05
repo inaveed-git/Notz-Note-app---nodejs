@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid container-fluid-custom pb-5 mb-5">
+      <div class="row mb-4">
+        <div class="col">
+          <h1 class="logo">Hey, <%= userName %></h1>
+        </div>
+        <div class="col text-end">
+          <a href="/dashboard/add" class="btn-color btn logo">+ New Note</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <% if (notes.length > 0) { %> <% notes.forEach(function(note) { %>
+        <div class="col-sm-3 mb-4">
+          <div class="card border-primary" style="min-height: 210px">
+            <a
+              href="/dashboard/item/<%= note._id %>"
+              class="card-body text-decoration-none"
+            >
+              <div class="card-title"><%= note.title %></div>
+              <div class="card-text"><%= note.body %></div>
+            </a>
+          </div>
+        </div>
+        <% }); %> <% } else { %>
+        <!-- Display a message if there are no notes -->
+        <div class="row">
+          <div class="col-3">
+            <img
+              src="/img/human-3.svg"
+              alt="Human pointing hand toward a create button"
+            />
+          </div>
+          <div class="col mt-md-4">
+            <h2>Okay....</h2>
+            <h4>Let's start with your first note!</h4>
+          </div>
+        </div>
+        <% } %>
+      </div>
+
+      <!-- Pagination section -->
+      <nav aria-label="Page navigation mt-3">
+        <ul class="pagination justify-content-center mt-5">
+          <li class="page-item <%= current == 1 ? 'disabled' : '' %>">
+            <a class="page-link" href="?page=<%= Math.max(current - 1, 1) %>"
+              >Previous</a
+            >
+          </li>
+          <% const startPage = Math.max(current - 2, 1); %> <% const endPage =
+          Math.min(startPage + 3, pages); %> <% if (startPage > 1) { %>
+          <li class="page-item">
+            <a class="page-link" href="?page=<%= startPage - 1 %>">...</a>
+          </li>
+          <% } %> <% for (let i = startPage; i <= endPage; i++) { %>
+          <li class="page-item <%= current == i ? 'active' : '' %>">
+            <a class="page-link" href="?page=<%= i %>"><%= i %></a>
+          </li>
+          <% } %> <% if (endPage < pages) { %>
+          <li class="page-item">
+            <a class="page-link" href="?page=<%= endPage + 1 %>">...</a>
+          </li>
+          <% } %>
+          <li class="page-item <%= current == pages ? 'disabled' : '' %>">
+            <a
+              class="page-link"
+              href="?page=<%= Math.min(current + 1, pages) %>"
+              >Last</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Include your JavaScript and other dependencies here -->
+  </body>
+</html>

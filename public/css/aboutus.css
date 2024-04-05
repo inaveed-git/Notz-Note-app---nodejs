@@ -1,0 +1,100 @@
+/* styles.css */
+
+:root {
+    --text-color: #f6f7f9;
+    --background-color: #828fae;
+    --button-color: #627195;
+    --button-color-hover: #4e5a7b;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.logo {
+    color: #323748;
+}
+
+.btn-color,
+.btn-color:hover {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-color:hover {
+    background-color: var(--button-color-hover);
+}
+
+.container-fluid-custom {
+    max-width: 95%;
+}
+
+.card {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.card-text {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.page-link {
+    color: var(--text-color);
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: var(--button-color-hover);
+    border-color: var(--button-color-hover);
+}
+
+.page-item.active .page-link {
+    background-color: var(--button-color-hover);
+    border-color: var(--button-color-hover);
+}
+
+.page-item.disabled .page-link {
+    opacity: 0.5;
+}
+
+.black {
+    color: #000;
+}
+
+
+.githubbtn{
+    background-color: #6C757D;
+    color: white;
+}

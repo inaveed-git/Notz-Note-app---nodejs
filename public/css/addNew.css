@@ -1,0 +1,128 @@
+:root {
+    --text-color: #f6f7f9;
+    --background-color: #828fae;
+    --button-color: #627195;
+    --button-color-hover: #4e5a7b;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.logo {
+    color: #323748; /* Using color directly as it's not changed */
+}
+
+.btn-color,
+.btn-color:hover {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-color:hover {
+    background-color: var(--button-color-hover);
+}
+
+.container-fluid-custom {
+    max-width: 95%;
+}
+
+.card {
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: #fff; /* Set title color to white */
+    font-size: 1.2rem; /* Example font size */
+    margin-bottom: 0.5rem; /* Example margin bottom */
+}
+
+.card-text {
+    color: var(--text-color); /* Set body text color */
+    font-size: 1rem; /* Example font size */
+}
+
+.card-body {
+    padding: 1rem; /* Add padding to card body */
+    border-radius: 0.5rem; /* Add border-radius for better appearance */
+}
+
+.text-decoration-none {
+    text-decoration: none; /* Remove text-decoration for links */
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.page-link {
+    color: var(--text-color);
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: var(--button-color-hover);
+    border-color: var(--button-color-hover);
+}
+
+.page-item.active .page-link {
+    background-color: var(--button-color-hover);
+    border-color: var(--button-color-hover);
+}
+
+.page-item.disabled .page-link {
+    opacity: 0.5;
+}
+
+/* Styles for input fields */
+input[type="text"],
+textarea {
+ 
+    color: var(--text-color); /* Set text color to match the theme */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 5px; /* Add border radius for better appearance */
+    padding: 10px; /* Add padding for spacing */
+    width: 100%; /* Make input fields occupy full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    resize: vertical; /* Allow vertical resizing of textarea */
+    margin-bottom: 10px; /* Add margin to separate input fields */
+}
+
+/* Styles for buttons */
+button {
+    background-color: var(--button-color); /* Match button background color with the theme */
+    color: var(--text-color); /* Set button text color to match the theme */
+    border: none; /* Remove border for cleaner appearance */
+    padding: 10px 20px; /* Add padding to buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; /* Add border radius for better appearance */
+}
+
+button:hover {
+    background-color: var(--button-color-hover); /* Change button background color on hover */
+}
+
+/* Additional styles for the form */
+.form-group {
+    margin-bottom: 20px; /* Add margin to separate form groups */
+}
+
+.position-relative {
+    position: relative; /* Set position relative for absolute positioning */
+}
+
+.modal-body {
+    color: var(--text-color); /* Set modal body text color to match the theme */
+}
